@@ -125,11 +125,24 @@ MySQL / TiDB จะส่งกลับผลลัพธ์ในตัวแ�
 
 
 // Start server
+// const startServer = async () => {
+//     await initMySQL()
+//     app.listen(port, () => {
+//         console.log(`Server is running on http://localhost:${port}`)
+//     })
+// }
+
+// Start server
 const startServer = async () => {
     await initMySQL()
-    app.listen(port, () => {
-        console.log(`Server is running on http://localhost:${port}`)
+    const PORT = process.env.PORT || 8000;
+    app.listen(PORT, '0.0.0.0', () => {
+        console.log(`Server is running on http://0.0.0.0:${PORT}`)
     })
 }
+
+// localhost = Container ใช้เองภายในเท่านั้น
+// 0.0.0.0 = เปิดให้บริการทุก interface → ทำให้ Render (หรือใครก็ได้) เข้าถึงได้
+
 
 startServer();
