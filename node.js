@@ -144,5 +144,6 @@ const startServer = async () => {
 // localhost = Container ใช้เองภายในเท่านั้น
 // 0.0.0.0 = เปิดให้บริการทุก interface → ทำให้ Render (หรือใครก็ได้) เข้าถึงได้
 
+// เปิด http://localhost:8000/customers
 
 startServer();
